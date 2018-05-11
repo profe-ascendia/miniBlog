@@ -12,7 +12,7 @@
 				<?php 
 					if(isset($_GET["post"])){
 						$titulo=$_GET["post"];
-						echo leerArchivo($titulo);
+						echo formatearArchivo($titulo);
 					}
 					//Mostrar el contenido por defecto
 				?>

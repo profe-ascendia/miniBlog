@@ -42,10 +42,24 @@ function leerArchivo($titulo){
 }
 
 function crearEnlaces($titulo){
+	
 	$contenido=calculaNombreArchivo($titulo).",$titulo".PHP_EOL;
-	$manejador=fopen(RUTA_POSTS.NOMBRE_MENU, 'a');
-	$resp=fwrite($manejador, $contenido);
-	fclose($manejador);
+	if(file_exists(RUTA_POSTS.NOMBRE_MENU)){
+		$lineas=file(RUTA_POSTS.NOMBRE_MENU);
+		$clave=array_search($contenido, $lineas);
+
+		if(!$clave){
+			$manejador=fopen(RUTA_POSTS.NOMBRE_MENU, 'a');
+			$resp=fwrite($manejador, $contenido);
+			fclose($manejador);
+		}
+	}
+	else{
+		$manejador=fopen(RUTA_POSTS.NOMBRE_MENU, 'a');
+		$resp=fwrite($manejador, $contenido);
+		fclose($manejador);
+	}
+
 
 }
 
@@ -65,5 +79,11 @@ function creaListaEnlaces(){
 		
 	}
 
-
+function formatearArchivo($titulo){
+	$contenido=leerArchivo($titulo);
+	$partes=explode('##',$contenido);
+	$salida="<h1>$partes[0]</h1>$partes[1]";
+	return $salida;
+	}
  ?>
+

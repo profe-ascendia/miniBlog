@@ -1,2 +1,3 @@
-Hola chavales<br><br>
-Cuando se usa SSL, Microsoft IIS violará el protocolo, cerrando la conexión sin mandar un indicador close_notify. PHP avisará de esto con este mensaje "SSL: Fatal Protocol Error", cuando llegue al final de los datos. Una solución a este problema es bajar el nivel de aviso de errores del sistema para que no incluya advertencias. PHP pueden detectar servidores IIS con este problema cuando se abre un flujo usando https:// y suprime la advertencia. Si usáis la función fsockopen() para crear un socket ssl://, tendréis que suprimir la advertencia explicitamente.
+Hola chavales##$manejador=fopen(RUTA_POSTS.NOMBRE_MENU, 'a');
+			$resp=fwrite($manejador, $contenido);
+			fclose($manejador);
