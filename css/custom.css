@@ -1,0 +1,48 @@
+
+header,footer{
+	background-color: #003d99;
+	
+	padding-top:5px;
+}
+header{
+	height:auto;
+}
+
+nav ul{
+	list-style: none;
+	margin-bottom: 0;
+}
+
+#contenedor{
+	position: relative;
+}
+footer{
+	position:fixed;
+	bottom:0;
+
+	width: 100%;
+}
+
+.separador{
+
+}
+.menu{
+	display: inline-block;
+}
+.menu a{
+	text-decoration: none;
+	color:white;
+}
+.menu a:hover{
+	text-decoration: underline;
+	color:red;
+}
+
+#cuerpo{
+	resize: none;
+	height:300px;
+}
+
+.separador{
+	margin-bottom: 6%;
+}
